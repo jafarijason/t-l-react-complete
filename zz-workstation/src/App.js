@@ -9,13 +9,21 @@ class App extends Component {
         super();
         // this.handlePersonChange = this.handlePersonChange.bind(this)
 
-        this.state = {
-            persons: [
-                { firsName: "Jason", lastNmae: "Jafari", age: 33 },
-                { firsName: "Roy", lastNmae: "Marandi", age: 30 },
-                { firsName: "Sara", lastNmae: "RekabTalaei", age: 31 },
-            ]
-        }
+        // this.state = {
+        //     persons: [
+        //         { firsName: "Jason", lastNmae: "Jafari", age: 33 },
+        //         { firsName: "Roy", lastNmae: "Marandi", age: 30 },
+        //         { firsName: "Sara", lastNmae: "RekabTalaei", age: 31 },
+        //     ]
+        // }
+    }
+
+    state = {
+        persons: [
+            { firsName: "Jason", lastNmae: "Jafari", age: 33 },
+            { firsName: "Roy", lastNmae: "Marandi", age: 30 },
+            { firsName: "Sara", lastNmae: "RekabTalaei", age: 31 },
+        ]
     }
 
     // handlePersonChange() {
@@ -41,24 +49,25 @@ class App extends Component {
 
     render() {
         const { persons } = this.state
-        return (
-            <div className="App">
-                <h1>Hello World!</h1>
-                <hr />
+        return ( <
+            div className = "App" >
+            <
+            h1 > Hello World! < /h1> <
+            hr / >
 
-                {
-                    persons.map(person => (
-                        <Person
-                            firstName={person.firsName}
-                            lastName={person.lastNmae}
-                            Age={person.age}
-                            key={person.age}
-                        />
-                    ))
-                }
-                <hr />
-                <button onClick={this.handlePersonChange}>Update Persons</button>
-            </div>
+            {
+                persons.map(person => ( <
+                    Person firstName = { person.firsName }
+                    lastName = { person.lastNmae }
+                    Age = { person.age }
+                    key = { person.age }
+                    />
+                ))
+            } <
+            hr / >
+            <
+            button onClick = { this.handlePersonChange } > Update Persons < /button> <
+            /div>
         );
     }
 }
