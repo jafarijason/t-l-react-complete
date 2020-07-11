@@ -10,7 +10,7 @@ class App extends Component {
       { id: 2, firstname: "Roy", lastname: "Marandi", age: 30 },
       { id: 3, firstname: "Sara", lastname: "RekabTalaei", age: 31 },
     ],
-    showPersons: true
+    showPersons: false
   }
 
   handleShowPersons = () => {

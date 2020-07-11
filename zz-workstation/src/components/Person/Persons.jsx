@@ -12,7 +12,7 @@ const Persons = ({ persons, personDelete }) => {
             lastname={person.lastname}
             age={person.age}
             key={person.id}
-            personDelete={()=>personDelete(person.id)}
+            personDelete={() => personDelete(person.id)}
           />
         ))
       }
