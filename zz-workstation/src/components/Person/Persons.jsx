@@ -1,17 +1,18 @@
 import React from 'react'
 import Person from './Person'
 
-const Persons = ({ persons }) => {
+const Persons = ({ persons, personDelete }) => {
   // console.log(persons)
   return (
     <div>
       {
-        persons.map(perosn => (
+        persons.map(person => (
           <Person
-            firstname={perosn.firstname}
-            lastname={perosn.lastname}
-            age={perosn.age}
-            key={perosn.id}
+            firstname={person.firstname}
+            lastname={person.lastname}
+            age={person.age}
+            key={person.id}
+            personDelete={()=>personDelete(person.id)}
           />
         ))
       }
