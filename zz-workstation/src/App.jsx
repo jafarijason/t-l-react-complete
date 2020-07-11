@@ -11,9 +11,9 @@ class App extends Component {
     ]
   }
   render() {
-    const {persons} = this.state
+    const { persons } = this.state
     return (
-      <div>
+      <div style={{ textAlign: "center" }}>
         <h1>Every things are good.</h1>
 
         <Persons persons={persons} />
@@ -22,4 +22,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App; 
