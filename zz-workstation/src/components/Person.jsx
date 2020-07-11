@@ -1,9 +1,13 @@
 import React from 'react';
 
 const Person = () => {
-  return ( 
-    <p>Jason Jafari</p>
-   );
+  return (
+    <div>
+      <p>Jason Jafari</p>
+      <hr />
+      <p>Age: {Math.floor(Math.random() * 30)}</p>
+    </div>
+  );
 }
- 
+
 export default Person;
