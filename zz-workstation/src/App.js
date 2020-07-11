@@ -49,25 +49,26 @@ class App extends Component {
 
     render() {
         const { persons } = this.state
-        return ( <
-            div className = "App" >
-            <
-            h1 > Hello World! < /h1> <
-            hr / >
+        return (
+            <div className="App">
+                <h1>Hello World!</h1>
+                <hr />
 
-            {
-                persons.map(person => ( <
-                    Person firstName = { person.firsName }
-                    lastName = { person.lastNmae }
-                    Age = { person.age }
-                    key = { person.age }
-                    />
-                ))
-            } <
-            hr / >
-            <
-            button onClick = { this.handlePersonChange } > Update Persons < /button> <
-            /div>
+                {
+                    persons.map(person => (
+                        <Person
+                            firstName={person.firsName}
+                            lastName={person.lastNmae}
+                            Age={person.age}
+                            key={person.age}
+                        >
+                            Some children
+                        </Person>
+                    ))
+                }
+                <hr />
+                <button onClick={this.handlePersonChange}>Update Persons</button>
+            </div>
         );
     }
 }
