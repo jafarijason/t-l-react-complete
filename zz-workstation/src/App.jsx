@@ -2,21 +2,39 @@ import React, { Component } from 'react'
 import Persons from './components/Person/Persons'
 
 
+
 class App extends Component {
   state = {
     persons: [
       { firstname: "Jason", lastname: "Jafari", age: 33 },
       { firstname: "Roy", lastname: "Marandi", age: 30 },
       { firstname: "Sara", lastname: "RekabTalaei", age: 31 },
-    ]
+    ],
+    showPersons: false
+  }
+
+  handleShowPersons = () => {
+    this.setState({ showPersons: !this.state.showPersons })
+    console.log(this.state.showPersons)
   }
   render() {
-    const { persons } = this.state
+    const { persons, showPersons } = this.state
+    const bottonStyle = {
+      padding: "1em",
+      backgroundColor: "pink"
+    }
+    let person = null;
+    if (showPersons) {
+      person = <Persons persons={persons} />
+    }
     return (
       <div style={{ textAlign: "center" }}>
-        <h1>Every things are good.</h1>
+        <h1>Persons Manger</h1>
+        <h4>Number of persons: {persons.length}</h4>
 
-        <Persons persons={persons} />
+
+        <button onClick={this.handleShowPersons}  style={bottonStyle}  >Persons Show</button>
+        {person}
       </div>
     );
   }
