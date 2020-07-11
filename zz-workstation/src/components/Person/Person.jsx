@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Person = ({ firstname, lastname, age, personDelete }) => {
+const Person = ({ fullName, age, personDelete,personChange }) => {
   return (
-    <div onClick={personDelete} style={{ cursor: "pointer" }}>
-      <p>{`${firstname} - ${lastname}- Age: ${age}`}</p>
+    <div style={{ cursor: "pointer" }}>
+      <p  >{`${fullName} - Age: ${age}`}</p>
+      <input type="text" placeholder={fullName} onChange={personChange}/>
+      <button onClick={personDelete} >delete</button>
     </div>
   );
 }

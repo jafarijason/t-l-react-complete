@@ -6,11 +6,11 @@ import Persons from './components/Person/Persons'
 class App extends Component {
   state = {
     persons: [
-      { id: 1, firstname: "Jason", lastname: "Jafari", age: 33 },
-      { id: 2, firstname: "Roy", lastname: "Marandi", age: 30 },
-      { id: 3, firstname: "Sara", lastname: "RekabTalaei", age: 31 },
+      { id: 1, fullName: "Jason Jafari", age: 33 },
+      { id: 2, fullName: "Roy Jafari", age: 30 },
+      { id: 3, fullName: "Sara Rekab Talaei", age: 31 },
     ],
-    showPersons: false
+    showPersons: true
   }
 
   handleShowPersons = () => {
@@ -24,6 +24,17 @@ class App extends Component {
     const filteredPersons = persons.filter(p => p.id != id)
     this.setState({ persons: filteredPersons })
   }
+
+
+  handleNameChange = (event, id) => {
+    const { persons: allPersons } = this.state
+    const personIndex = allPersons.findIndex(p => p.id === id)
+    const person = allPersons[personIndex]
+    person.fullName = event.target.value
+    // console.log(event)
+    allPersons[personIndex] = person
+    this.setState({ persons: allPersons })
+  }
   render() {
     const { persons, showPersons } = this.state
     const bottonStyle = {
@@ -35,6 +46,7 @@ class App extends Component {
       person = <Persons
         persons={persons}
         personDelete={this.handleDeletePerson}
+        personChange={this.handleNameChange }
       />
     }
     return (
