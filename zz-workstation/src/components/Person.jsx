@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-
-class Person extends Component {
-
-  render() {
-    return (<p>Jason Jafari </p>);
-  }
+const Person = () => {
+  return ( 
+    <p>Jason Jafari</p>
+   );
 }
-
+ 
 export default Person;
