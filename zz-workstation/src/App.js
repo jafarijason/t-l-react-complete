@@ -7,6 +7,7 @@ class App extends Component {
 
     constructor() {
         super();
+        this.handlePersonChange = this.handlePersonChange.bind(this)
 
         this.state = {
             persons: [
@@ -15,6 +16,16 @@ class App extends Component {
                 { firsName: "Sara", lastNmae: "RekabTalaei", age: 31 },
             ]
         }
+    }
+
+    handlePersonChange() {
+        this.setState({
+            persons: [
+                { firsName: "JasonU", lastNmae: "JafariU", age: 34 },
+                { firsName: "RoyU", lastNmae: "MarandiU", age: 31 },
+                { firsName: "SaraU", lastNmae: "RekabTalaeiU", age: 32 },
+            ]
+        })
     }
 
     render() {
@@ -30,10 +41,12 @@ class App extends Component {
                             firstName={person.firsName}
                             lastName={person.lastNmae}
                             Age={person.age}
+                            key={person.age}
                         />
                     ))
                 }
-
+                <hr />
+                <button onClick={this.handlePersonChange}>Update Persons</button>
             </div>
         );
     }
