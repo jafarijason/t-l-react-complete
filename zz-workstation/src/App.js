@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import "./App.css";
+import Person from './components/Person';
 
 class App extends Component {
     constructor() {
@@ -11,6 +12,8 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>Hello World!</h1>
+                <hr />
+                <Person />
             </div>
         );
     }
