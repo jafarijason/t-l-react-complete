@@ -11,7 +11,7 @@ const Persons = ({ persons }) => {
             firstname={perosn.firstname}
             lastname={perosn.lastname}
             age={perosn.age}
-            key={perosn.age}
+            key={perosn.id}
           />
         ))
       }
