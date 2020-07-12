@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Alert, Button, Badge } from "react-bootstrap";
+import { Button  } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 
 import Persons from "./components/Person/Persons";
+import Header from "./components/common/Header";
 
 class App extends Component {
     state = {
@@ -72,11 +73,7 @@ class App extends Component {
 
         let person = null;
 
-        let badgeStyle = "";
 
-        if (persons.length >= 3) badgeStyle = "success";
-        if (persons.length <= 2) badgeStyle = "warning";
-        if (persons.length <= 1) badgeStyle = "danger";
 
         if (showPersons) {
             person = (
@@ -90,16 +87,7 @@ class App extends Component {
 
         return (
             <div className="rtl text-center">
-                <Alert variant="info">
-                    <h2>مدیریت کننده اشخاص</h2>
-                </Alert>
-                <Alert variant="light">
-                    تعداد اشخاص{" "}
-                    <Badge pill variant={badgeStyle}>
-                        {persons.length}
-                    </Badge>{" "}
-                    نفر می باشد
-                </Alert>
+                <Header PersonsLength={persons.length} appTitle={this.props.title} />
 
                 <div className="m-2 p-2">
                     <form
