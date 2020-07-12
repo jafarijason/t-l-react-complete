@@ -10,6 +10,7 @@ class App extends Component {
       { id: 2, fullName: "Roy Jafari", age: 30 },
       { id: 3, fullName: "Sara Rekab Talaei", age: 31 },
     ],
+    person: '',
     showPersons: true
   }
 
@@ -35,6 +36,21 @@ class App extends Component {
     allPersons[personIndex] = person
     this.setState({ persons: allPersons })
   }
+
+  handleNewPerson = () => {
+    const persons = [...this.state.persons]
+    const person = {
+      id: Math.floor(Math.random() * 300),
+      fullName: this.state.person
+    }
+    persons.push(person)
+    this.setState({ persons: persons, person: '' })
+  }
+
+  setPerson = event => {
+    this.setState({ person: event.target.value })
+  }
+
   render() {
     const { persons, showPersons } = this.state
     const bottonStyle = {
@@ -46,14 +62,17 @@ class App extends Component {
       person = <Persons
         persons={persons}
         personDelete={this.handleDeletePerson}
-        personChange={this.handleNameChange }
+        personChange={this.handleNameChange}
       />
     }
     return (
       <div style={{ textAlign: "center" }}>
         <h1>Persons Manger</h1>
         <h4>Number of persons: {persons.length}</h4>
-
+        <div>
+          <input type="text" onChange={this.setPerson} placeholder="Add new Person" value={this.state.person} />
+          <button onClick={this.handleNewPerson}>add</button>
+        </div>
 
         <button onClick={this.handleShowPersons} style={bottonStyle}  >Persons Show</button>
         {person}
