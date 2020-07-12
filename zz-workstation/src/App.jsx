@@ -81,9 +81,9 @@ class App extends Component {
         if (showPersons) {
             person = (
                 <Persons
-                    persons={persons}
-                    personDelete={this.handleDeletePerson}
-                    personChange={this.handleNameChange}
+                    // persons={persons}
+                    // personDelete={this.handleDeletePerson}
+                    // personChange={this.handleNameChange}
                 />
             );
         }
