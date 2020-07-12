@@ -15,6 +15,8 @@ class App extends Component {
         appTitle: "مدیریت کننده اشخاص"
     };
 
+    static contextType = SimpleContext
+
     handleShowPerson = () => {
         this.setState({ showPersons: !this.state.showPersons });
     };
